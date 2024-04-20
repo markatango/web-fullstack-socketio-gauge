@@ -25,12 +25,9 @@ const TextPointer = ({socket}) => {
         socket.on("float_value", handleNewData); 
         socket.onAny((e,d)=>{console.log(e)})   
     })     
-        
     
         return () => {
-          // before the component is destroyed
-          // unbind all event handlers used in this component
-        //   socket.off("reading", handleNewData);
+          socket.off("float_value", handleNewData);
         };
       },[socket]);
 
