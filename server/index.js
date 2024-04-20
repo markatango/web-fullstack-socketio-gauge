@@ -2,18 +2,16 @@ const express = require('express');
 const app = express()
 const httpServer = require('http').createServer(app);
 const port = process.env.PORT || 5000;
-// const io = require('socket.io')(server);
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const {Server} = require('socket.io')
+const { Server } = require('socket.io')
 
 const io = new Server(httpServer, {
   cors: {
     origin: ["http://localhost:8080", "http://localhost:4000"]
   }
 });
-
 
 io.on('connection', socket => {
     console.log('User connected');
