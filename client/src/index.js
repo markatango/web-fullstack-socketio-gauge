@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import App from './app';
 import  {io} from 'socket.io-client';
 import { SOCKET_URL } from './config';
-import 'dotenv/config';
 
 var socket = io(SOCKET_URL);
 console.log(`at index: connected: ${socket.connected}`)
